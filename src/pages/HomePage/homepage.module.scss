@@ -1,7 +1,7 @@
 .homepage {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 500px 300px;
+  grid-template-columns: 500px 400px;
   gap: 5em;
   justify-content: center;
   align-items: center;
@@ -60,5 +60,19 @@
     &:hover {
       background-color: #f0f0f0;
     }
+  }
+  &__history {
+    margin: 1em auto 0 auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    width: fit-content;
+    padding: 0.75em 1em;
+    cursor: default;
+    border: 1px solid #dadada;
+    border-radius: 7px;
+    box-shadow: #959da533 0px 8px 24px;
   }
 }

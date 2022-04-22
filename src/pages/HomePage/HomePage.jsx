@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./homepage.module.scss";
+import getHistory from "../../util/history/getHistory";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 const initialValues = {
   perKm: 0.56,
@@ -10,6 +12,7 @@ const initialValues = {
 
 const HomePage = () => {
   const navigation = useNavigate();
+  const history = getHistory();
 
   const [formValues, setFormValues] = useState(initialValues);
 
@@ -83,6 +86,19 @@ const HomePage = () => {
       </div>
       <div className={styles["homepage__column"]}>
         <h1 className={styles["homepage__title"]}>Historia</h1>
+        {history == null ? (
+          <div className={styles["homepage__history"]}>Historia jest pusta</div>
+        ) : (
+          history.slice(0, 3).map((historyElem, key) => {
+            return (
+              <div key={key} className={styles["homepage__history"]}>
+                {historyElem.start}
+                <AiOutlineArrowDown />
+                {historyElem.end}
+              </div>
+            );
+          })
+        )}
       </div>
     </main>
   );

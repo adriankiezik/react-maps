@@ -1,4 +1,21 @@
 .map {
   height: 90vh;
   width: 100vw;
+  &__pdf {
+    font-size: 0.9em;
+    position: absolute;
+    top: 1.5%;
+    right: 1.6%;
+    width: fit-content;
+    padding: 0.75em 0.9em;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #dadada;
+    border-radius: 7px;
+    box-shadow: #959da533 0px 8px 24px;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
 }

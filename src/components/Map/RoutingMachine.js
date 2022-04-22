@@ -3,8 +3,7 @@ import { createControlComponent } from "@react-leaflet/core";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import "leaflet-routing-machine";
 
-const createRoutineMachineLayer = ({ positions }) => {
-  console.log(positions);
+const createRoutineMachineLayer = ({ positions, setInfo }) => {
   const instance = L.Routing.control({
     waypoints: [
       L.latLng(positions.startPosition[1], positions.startPosition[2]),
@@ -19,6 +18,13 @@ const createRoutineMachineLayer = ({ positions }) => {
     draggableWaypoints: false,
     fitSelectedRoutes: true,
     showAlternatives: false,
+  }).on("routeselected", (event) => {
+    setInfo({
+      name: instance._selectedRoute.name,
+      distance: instance._selectedRoute.summary.totalDistance,
+      time: instance._selectedRoute.summary.totalTime,
+      instructions: instance._selectedRoute.instructions,
+    });
   });
 
   return instance;

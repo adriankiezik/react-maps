@@ -4,9 +4,13 @@ import { useSearchParams } from "react-router-dom";
 import { MapContainer, TileLayer } from "react-leaflet";
 import fetchLocation from "../../util/api/fetchLocation";
 import RoutingMachine from "./RoutingMachine";
+import DownloadPdf from "./DownloadPdf";
+import addToHistory from "../../util/history/addToHistory";
 
 const Map = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const [routeNavInfo, setRouteNavInfo] = useState(null);
 
   const [routeInfo, setRouteInfo] = useState({
     startPosition: null,
@@ -26,6 +30,10 @@ const Map = () => {
 
     fetchPositions(start, end, price);
   }, []);
+
+  useEffect(() => {
+    addToHistory(routeInfo);
+  }, [routeInfo]);
 
   const fetchPositions = async (start, end, price) => {
     let startResponse;
@@ -69,9 +77,15 @@ const Map = () => {
         <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {routeInfo.startPosition == null ||
         routeInfo.endPosition == null ? null : (
-          <RoutingMachine positions={routeInfo} />
+          <RoutingMachine positions={routeInfo} setInfo={setRouteNavInfo} />
         )}
       </MapContainer>
+      <div
+        onClick={() => DownloadPdf(routeNavInfo)}
+        className={styles["map__pdf"]}
+      >
+        Pobierz PDF
+      </div>
     </div>
   );
 };
