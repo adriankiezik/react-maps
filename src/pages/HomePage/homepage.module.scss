@@ -5,7 +5,6 @@
   gap: 5em;
   justify-content: center;
   align-items: center;
-  transform: translateY(-7.5vh);
   &__column {
     min-height: 555px;
     padding: 2em;
@@ -33,10 +32,6 @@
     box-shadow: #959da533 0px 8px 24px;
     margin-bottom: 1em;
     font-family: "Poppins", sans-serif;
-    &--price {
-      width: 75px;
-      margin-right: 0.75em;
-    }
   }
   &__icon {
     display: inline-block;

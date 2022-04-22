@@ -5,7 +5,6 @@ import getHistory from "../../util/history/getHistory";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
 const initialValues = {
-  perKm: 0.56,
   startPosition: "",
   endPosition: "",
 };
@@ -27,34 +26,18 @@ const HomePage = () => {
   const handleSearchClick = () => {
     const start = encodeURI(formValues.startPosition);
     const end = encodeURI(formValues.endPosition);
-    const price = encodeURI(formValues.perKm);
 
     if (start.length === 0 || end.length === 0) {
       alert("Wypełnij wszystkie pola.");
       return;
     }
-    navigation(`/map?start=${start}&end=${end}&price=${price}`);
+    navigation(`/map?start=${start}&end=${end}`);
   };
 
   return (
     <main className={styles["homepage"]}>
       <div className={styles["homepage__column"]}>
         <h1 className={styles["homepage__title"]}>React Maps</h1>
-        <label className={styles["homepage__subtitle"]}>Koszt za km</label>
-        <div>
-          <input
-            type="text"
-            name="perKm"
-            value={formValues.perKm}
-            onChange={handleInputChange}
-            autoComplete="off"
-            autoCorrect="false"
-            className={
-              styles["homepage__input"] + " " + styles["homepage__input--price"]
-            }
-          />
-          <span>zł</span>
-        </div>
         <label className={styles["homepage__subtitle"]}>
           Lokacja początkowa
         </label>
