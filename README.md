@@ -5,4 +5,6 @@
 2. Run "npm install"
 3. Edit /src/config.json with your backend url (optional)
 ## Additional info
-Decided to use Vite instead of Webpack (here why: https://vitejs.dev/guide/why.html). Also refreshing website hosted on vercel causes 404 error. It's not the case on localhost or other hosts. I'm sure it's vercel only issue.
+Decided to use Vite instead of Webpack (here why: https://vitejs.dev/guide/why.html). Also refreshing website hosted on vercel causes 404 error. It's not the case on localhost or other hosts. I'm sure it's vercel only issue. 
+<br /><br />
+<img src="https://i.imgur.com/PlvplFl.png"></img>
