@@ -1,0 +1,64 @@
+.homepage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 500px 300px;
+  gap: 5em;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-7.5vh);
+  &__column {
+    min-height: 555px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    text-align: center;
+    color: #252525;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+  }
+  &__subtitle {
+    margin: 0.5em 0;
+    color: #252525;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  &__input {
+    font-size: 1rem;
+    padding: 0.75em 1em;
+    border: 1px solid #dadada;
+    border-radius: 7px;
+    box-shadow: #959da533 0px 8px 24px;
+    margin-bottom: 1em;
+    font-family: "Poppins", sans-serif;
+    &--price {
+      width: 75px;
+      margin-right: 0.75em;
+    }
+  }
+  &__icon {
+    display: inline-block;
+    transform: translateY(3px);
+    margin-right: 0.5em;
+  }
+  &__currency {
+    margin-left: 0.5em;
+  }
+  &__button {
+    margin-top: 1.5em;
+    margin-left: auto;
+    width: fit-content;
+    padding: 0.75em 1em;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #dadada;
+    border-radius: 7px;
+    box-shadow: #959da533 0px 8px 24px;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
