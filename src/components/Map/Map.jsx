@@ -9,6 +9,7 @@ import addToHistory from "../../util/history/addToHistory";
 import PriceInput from "../Price/Input/PriceInput";
 import PriceResult from "../Price/Result/PriceResult";
 import fetchPrice from "../../util/api/fetchPrice";
+import MapLoading from "./MapLoading/MapLoading";
 
 const Map = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -95,6 +96,7 @@ const Map = () => {
         routeInfo.endPosition == null ? null : (
           <RoutingMachine positions={routeInfo} setInfo={setRouteNavInfo} />
         )}
+        {routeNavInfo == null ? <MapLoading /> : null}
         <PriceInput setKmPrice={setKmPrice} />
         {totalPrice == null || isNaN(totalPrice) ? null : (
           <PriceResult price={totalPrice} />

@@ -1,6 +1,7 @@
 .map {
   height: 90vh;
   width: 100vw;
+  position: relative;
   &__pdf {
     font-size: 0.9em;
     position: absolute;
