@@ -103,7 +103,9 @@ const Map = () => {
         )}
       </MapContainer>
       <div
-        onClick={() => DownloadPdf(routeNavInfo)}
+        onClick={() =>
+          DownloadPdf(routeNavInfo, routeNavInfo.distance, totalPrice)
+        }
         className={styles["map__pdf"]}
       >
         Pobierz PDF

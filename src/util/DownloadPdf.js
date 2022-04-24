@@ -2,7 +2,7 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import latinize from "latinize";
 
-const DownloadPdf = (routeNavInfo) => {
+const DownloadPdf = (routeNavInfo, totalDistance, totalPrice) => {
   if (routeNavInfo == null) {
     alert(
       "Informacje odnośnie trasy nie zostały jeszcze załadowane. Spróbuj ponownie."
@@ -40,7 +40,13 @@ const DownloadPdf = (routeNavInfo) => {
     body: tableRows,
     margin: { top: 20 },
     didDrawPage: () => {
-      doc.text("Nawigacja", 14, 15);
+      doc.text(
+        `Koszt: ${totalPrice} zl, trasa: ${(totalDistance / 1000).toFixed(
+          2
+        )} km`,
+        14,
+        15
+      );
     },
   });
   doc.setFont("Helvetica");
