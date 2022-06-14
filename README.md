@@ -1,5 +1,4 @@
 # React Maps - frontend
-#### Made as a recruitment task
 ## Setup guide
 1. Clone repository
 2. Run "npm install"
