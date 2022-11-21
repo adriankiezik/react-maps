@@ -1,4 +1,4 @@
-# React Maps - frontend
+# React Maps
 ## Setup guide
 1. Clone repository
 2. Run "npm install"
